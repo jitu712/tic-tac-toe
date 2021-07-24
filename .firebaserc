@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "g2ttt-d1587": {
+      "hosting": {
+        "tic-tac-toe": [
+          "g2ttt-d1587"
+        ]
+      }
+    }
+  }
+}

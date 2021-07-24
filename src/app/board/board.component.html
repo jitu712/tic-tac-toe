@@ -1,0 +1,18 @@
+<mat-toolbar color="primary">TIC TAC TOE</mat-toolbar>
+<h1>Current player is {{ player }}</h1>
+
+<main>
+  <app-square
+    *ngFor="let val of squares; let i = index"
+    [value]="val"
+    (click)="move(i)"
+  ></app-square>
+</main>
+
+<!-- <h2 *ngIf="winner">{{ winner }} won the game</h2> -->
+
+<footer>
+  <button class="newGame" mat-flat-button (click)="newGame()" color="primary">
+    New game
+  </button>
+</footer>
