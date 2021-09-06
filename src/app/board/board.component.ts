@@ -12,7 +12,7 @@ export class BoardComponent implements OnInit {
   xIsNext: boolean = true;
   winner: string = '';
 
-  constructor(private _snackBar: MatSnackBar) { }
+  constructor() { }
 
   ngOnInit(): void {
     this.newGame();
@@ -37,9 +37,9 @@ export class BoardComponent implements OnInit {
 
     this.winner = this.calculateWinner();
     if (this.winner) {
-      this._snackBar.open(`${this.winner} won the game`, 'Close', { duration: 3000 });
+      // this._snackBar.open(`${this.winner} won the game`, 'Close', { duration: 3000 });
     } else if (!this.squares.includes(null)) {
-      this._snackBar.open(`Nobody won. Get good.`, 'Close', { duration: 3000 });
+      // this._snackBar.open(`Nobody won. Get good.`, 'Close', { duration: 3000 });
     }
   }
 

@@ -8,9 +8,9 @@ describe('SquareComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ SquareComponent ]
+      declarations: [SquareComponent]
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {
@@ -22,4 +22,26 @@ describe('SquareComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('#color should be primary if #value is null', () => {
+    const squareElement: HTMLElement = fixture.nativeElement;
+    const button = squareElement.querySelector('button');
+    expect(button?.getAttribute('color')).toEqual('primary');
+  })
+
+  it('#color should be accent if #value is X', () => {
+    component.value = 'X';
+    fixture.detectChanges();
+    const squareElement: HTMLElement = fixture.nativeElement;
+    const button = squareElement.querySelector('button');
+    expect(button?.getAttribute('color')).toEqual('accent');
+  })
+
+  it('#color should be warn if #value is O', () => {
+    component.value = 'O';
+    fixture.detectChanges();
+    const squareElement: HTMLElement = fixture.nativeElement;
+    const button = squareElement.querySelector('button');
+    expect(button?.getAttribute('color')).toEqual('warn');
+  })
 });
