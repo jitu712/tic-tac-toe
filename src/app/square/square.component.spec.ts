@@ -1,3 +1,4 @@
+import { DebugElement } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { SquareComponent } from './square.component';
@@ -24,7 +25,8 @@ describe('SquareComponent', () => {
   });
 
   it('#color should be primary if #value is null', () => {
-    const squareElement: HTMLElement = fixture.nativeElement;
+    const squareDe: DebugElement = fixture.debugElement;
+    const squareElement: HTMLElement = squareDe.nativeElement
     const button = squareElement.querySelector('button');
     expect(button?.getAttribute('color')).toEqual('primary');
   })
@@ -32,7 +34,8 @@ describe('SquareComponent', () => {
   it('#color should be accent if #value is X', () => {
     component.value = 'X';
     fixture.detectChanges();
-    const squareElement: HTMLElement = fixture.nativeElement;
+    const squareDe: DebugElement = fixture.debugElement;
+    const squareElement: HTMLElement = squareDe.nativeElement
     const button = squareElement.querySelector('button');
     expect(button?.getAttribute('color')).toEqual('accent');
   })
@@ -40,7 +43,8 @@ describe('SquareComponent', () => {
   it('#color should be warn if #value is O', () => {
     component.value = 'O';
     fixture.detectChanges();
-    const squareElement: HTMLElement = fixture.nativeElement;
+    const squareDe: DebugElement = fixture.debugElement;
+    const squareElement: HTMLElement = squareDe.nativeElement
     const button = squareElement.querySelector('button');
     expect(button?.getAttribute('color')).toEqual('warn');
   })
